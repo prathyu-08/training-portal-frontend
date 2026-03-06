@@ -1,0 +1,188 @@
+/* POWER ICON IMAGE */
+.power-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* POWER BUTTON */
+.power-btn {
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.power-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+/* DROPDOWN CONTAINER */
+.user-dropdown {
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  width: 180px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  z-index: 200;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #111827;
+}
+
+.logout-btn:hover {
+  background: #f3f4f6;
+}
+
+/* FIX TOPBAR RIGHT POSITIONING */
+.topbar-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+/* SEARCH BAR CONTAINER */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 40px;
+  width: 100%;
+  max-width: 520px;
+  transition: all 0.2s ease;
+}
+
+/* Focus state (professional feel) */
+.search-box:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+
+  height: 100%;
+  font-size: 14px;
+
+  background: transparent;
+  color: #111827;
+
+  /* ✅ THIS IS THE KEY FIX */
+  padding-top: 1px;
+  padding-bottom: 0;
+
+  line-height: 1.2;
+}
+
+/* Placeholder */
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+/* SEARCH ICON */
+.search-box .icon {
+  font-size: 16px;
+  color: #6b7280;
+}
+.topbar {
+  height: 64px;
+  background: #f8f9fa; /* Amazon dark */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0px; /* sidebar width */
+  right: 0;
+  z-index: 100;
+}
+
+.topbar-logo {
+  height: 50px;        /* 🔽 reduce logo height */
+  width: auto;
+  object-fit: contain;
+}
+
+/* LEFT SECTION (optional but recommended) */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.topbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* RIGHT */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #029c42;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* USER */
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user-box img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.user-info .name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-info .role {
+  font-size: 11px;
+  color: #d1d5db;
+}

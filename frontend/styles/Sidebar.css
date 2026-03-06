@@ -1,0 +1,33 @@
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #fff;
+
+  position: fixed;
+  top: 64px;          /* ✅ aligned with topbar */
+  left: 0;
+  bottom: 0;
+
+  padding: 16px 20px;
+}
+
+.sidebar-logo {
+  margin-bottom: 20px;
+}
+
+.sidebar-logo img {
+  width: 160px;
+  display: block;
+}
+.sidebar a {
+  display: block;
+  padding: 10px 12px;
+  color: #cbd5f5;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.sidebar a:hover {
+  background: #76a4ee;
+  color: #fff;
+}

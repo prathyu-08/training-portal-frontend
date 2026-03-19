@@ -11,7 +11,7 @@ function AdminCourseEdit() {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(true);
 
-  // 🔹 Load existing course data
+  //  Load existing course data
   useEffect(() => {
     loadCourse();
   }, []);
@@ -47,7 +47,7 @@ function AdminCourseEdit() {
     setLoading(false);
   }
 };
-  // 🔹 Update title + description
+  
   const handleUpdate = async (e) => {
     e.preventDefault();
 

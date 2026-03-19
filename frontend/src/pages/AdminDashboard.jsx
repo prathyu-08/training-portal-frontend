@@ -5,7 +5,7 @@ const API_BASE = "https://zzjx5wi8qd.execute-api.eu-north-1.amazonaws.com";
 function AdminDashboard() {
   const token = localStorage.getItem("id_token");
 
-  /* ================= STATES ================= */
+  //STATES 
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -26,7 +26,7 @@ function AdminDashboard() {
   const [createLoading, setCreateLoading] = useState(false);
   const [feedback, setFeedback] = useState({ message: "", type: "" });
 
-  /* ================= API FETCH ================= */
+  // API FETCH 
 
   const apiFetch = async (url, options = {}) => {
     try {
@@ -57,7 +57,7 @@ function AdminDashboard() {
     setTimeout(() => setFeedback({ message: "", type: "" }), 3500);
   };
 
-  /* ================= LOAD DATA ================= */
+  // LOAD DATA 
 
   useEffect(() => {
     if (token) {
@@ -90,7 +90,7 @@ function AdminDashboard() {
     }
   };
 
-  /* ================= CREATE COURSE ================= */
+  // CREATE COURSE 
 
   const createCourse = async () => {
     if (!title || !description) {
@@ -116,7 +116,7 @@ function AdminDashboard() {
     }
   };
 
-  /* ================= USER SELECT ================= */
+  //USER SELECT 
 
   const toggleAssignUser = (user) => {
     const exists = assignUsers.find((u) => u.user_id === user.user_id);
@@ -155,7 +155,7 @@ function AdminDashboard() {
     user.email.toLowerCase().includes(searchEmailRevoke.toLowerCase())
   );
 
-  /* ================= ASSIGN COURSE ================= */
+  // ASSIGN COURSE 
 
   const handleAssignCourse = async () => {
     if (!assignCourse) {
@@ -195,7 +195,7 @@ function AdminDashboard() {
     }
   };
 
-  /* ================= REVOKE COURSE ================= */
+  // REVOKE COURSE 
 
   const handleRevokeCourse = async () => {
     if (!revokeCourse) {
@@ -238,7 +238,7 @@ function AdminDashboard() {
     }
   };
 
-  /* ================= UI ================= */
+  // UI 
 
   const cardStyle = {
     background: "#fff",

@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
 
 // USER
+import UserCourses from "./pages/UserCourses";
 import UserCourseVideos from "./pages/UserCourseVideos";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
 
         {/* USER */}
+        <Route path="/user/courses" element={<UserCourses />} />
         <Route
           path="/user/courses/:courseId"
           element={<UserCourseVideos />}

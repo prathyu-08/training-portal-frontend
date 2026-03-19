@@ -1,73 +1,131 @@
-/* Page background */
+/* Register Page Container */
 .register-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #4f46e5, #9333ea, #2563eb);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-blue) 50%, var(--primary-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  padding: 2rem;
+  position: relative;
 }
 
-/* Card */
+/* Logo Positioning */
+.register-logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.register-logo img {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Card Container */
 .register-card {
-  width: 380px;
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-primary);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Title */
 .register-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: 24px;
-  color: #111827;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
-/* Inputs */
+.register-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Input Fields */
 .register-input {
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 16px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  font-size: 14px;
-  outline: none;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--neutral-200);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+
+.register-input::placeholder {
+  color: var(--text-light);
 }
 
 .register-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+  outline: none;
+  border-color: var(--primary-blue);
+  background-color: var(--bg-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /* Button */
 .register-button {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
   border: none;
-  background: #2563eb;
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  color: white;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all var(--transition-base);
+  margin-top: 0.5rem;
 }
 
 .register-button:hover {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
-/* Footer */
+.register-button:active {
+  transform: translateY(0);
+}
+
+/* Footer Links */
 .register-footer {
-  margin-top: 18px;
+  margin-top: 1.5rem;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .register-footer a {
-  color: #2563eb;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.register-footer a:hover {
+  color: var(--primary-dark);
   text-decoration: underline;
 }

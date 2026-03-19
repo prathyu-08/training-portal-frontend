@@ -16,10 +16,10 @@ function AdminCoursePage() {
   const [editingVideoId, setEditingVideoId] = useState(null);
   const [editTitle, setEditTitle] = useState("");
 
-  // ✅ Summary state per video: { [video_id]: { loading, text, error, visible } }
+  //  Summary state per video: { [video_id]: { loading, text, error, visible } }
   const [summaryState, setSummaryState] = useState({});
 
-  // ✅ Inline status messages (replaces all alert() calls)
+  //  Inline status messages (replaces all alert() calls)
   const [statusMsg, setStatusMsg] = useState({ text: "", type: "" });
 
   const token = localStorage.getItem("id_token");
@@ -29,7 +29,7 @@ function AdminCoursePage() {
     setTimeout(() => setStatusMsg({ text: "", type: "" }), 4000);
   };
 
-  /* ================= HELPER ================= */
+  
 
   const extractVideoId = (input) => {
     try {
@@ -48,7 +48,7 @@ function AdminCoursePage() {
     }
   };
 
-  /* ================= LOAD VIDEOS ================= */
+  // LOAD VIDEOS 
 
   const loadVideos = async () => {
     try {
@@ -67,7 +67,7 @@ function AdminCoursePage() {
     }
   };
 
-  /* ================= ADD VIDEO ================= */
+  // ADD VIDEO 
 
   const addVideo = async () => {
     if (!youtubeId.trim()) {
@@ -92,7 +92,7 @@ function AdminCoursePage() {
 
       setYoutubeId("");
       setVideoTitle("");
-      // ✅ NO alert() — just inline status, then reload
+      //  NO alert() — just inline status, then reload
       showStatus("Video added! Summary generating in background...", "success");
       await loadVideos();
     } catch (err) {
@@ -106,7 +106,7 @@ function AdminCoursePage() {
     }
   };
 
-  /* ================= UPDATE VIDEO ================= */
+  // UPDATE VIDEO 
 
   const updateVideo = async (videoId) => {
     if (!editTitle.trim()) {
@@ -128,10 +128,10 @@ function AdminCoursePage() {
     }
   };
 
-  /* ================= DELETE VIDEO ================= */
+  //DELETE VIDEO 
 
   const deleteVideo = async (videoId) => {
-    // ✅ Keep confirm for destructive action only
+    // Keep confirm for destructive action only
     if (!window.confirm("Delete this video?")) return;
     try {
       await axios.delete(
@@ -145,7 +145,7 @@ function AdminCoursePage() {
     }
   };
 
-  /* ================= GET SUMMARY — MAIN FEATURE ================= */
+  //GET SUMMARY — MAIN FEATURE 
 
   const fetchSummary = async (videoId) => {
     // Already loading — do nothing
@@ -221,13 +221,13 @@ function AdminCoursePage() {
     fetchSummary(videoId);
   };
 
-  /* ================= EFFECT ================= */
+  //EFFECT 
 
   useEffect(() => {
     loadVideos();
   }, []);
 
-  /* ================= UI ================= */
+  //UI 
 
   return (
     <div style={{ padding: "30px", maxWidth: "960px" }}>

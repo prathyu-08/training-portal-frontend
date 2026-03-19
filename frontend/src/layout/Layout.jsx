@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TopBar from "./TopBar";
-import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import "../styles/layout.css";
 
@@ -9,8 +8,6 @@ const Layout = () => {
 
   return (
     <div className="app-layout">
-      <Sidebar />
-
       <div className="content-area">
         <TopBar query={searchQuery} setQuery={setSearchQuery} />
         <main className="main-content">

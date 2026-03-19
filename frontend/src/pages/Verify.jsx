@@ -7,7 +7,8 @@ function Verify() {
   const [email, setEmail] = useState("")
   const [otp, setOtp] = useState("")
 
-  const API_BASE = "https://tpgcz18awg.execute-api.eu-north-1.amazonaws.com";
+  const API_BASE = "https://zzjx5wi8qd.execute-api.eu-north-1.amazonaws.com";
+
   const handleVerify = async () => {
     try {
       await axios.post(`${API_BASE}/verify`, {

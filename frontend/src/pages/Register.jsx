@@ -8,8 +8,7 @@ function Register() {
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
-  const API_BASE = "https://tpgcz18awg.execute-api.eu-north-1.amazonaws.com";
-
+  const API_BASE = "https://zzjx5wi8qd.execute-api.eu-north-1.amazonaws.com";
   const handleRegister = async () => {
     try {
       await axios.post(`${API_BASE}/register`, {

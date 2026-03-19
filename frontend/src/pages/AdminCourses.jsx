@@ -11,7 +11,7 @@ function AdminCourses() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // ✅ FIX: provide fallback so it doesn't crash on pages that don't use Outlet context
+  //  FIX: provide fallback so it doesn't crash on pages that don't use Outlet context
   const outletContext = useOutletContext() || {};
   const searchQuery = outletContext.searchQuery || "";
 
@@ -19,7 +19,7 @@ function AdminCourses() {
 
   useEffect(() => {
     loadCourses();
-    // ✅ Poll every 5s (was 2s — too aggressive)
+    // Poll every 5s (was 2s — too aggressive)
     const interval = setInterval(loadCourses, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -78,7 +78,7 @@ function AdminCourses() {
     try {
       const token = localStorage.getItem("id_token");
 
-      // ✅ FIX: use query params for DELETE (not body)
+      // use query params for DELETE (not body)
       await axios.delete(
         `${API_BASE}/admin/access?email=${encodeURIComponent(email)}&course_id=${courseId}`,
         { headers: { Authorization: `Bearer ${token}` } }

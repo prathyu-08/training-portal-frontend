@@ -20,7 +20,7 @@ function UserCourseVideos() {
   // ✅ Per-video summary state: { [video_id]: { visible, loading, text, error } }
   const [summaryState, setSummaryState] = useState({});
 
-  /* ================= LOAD VIDEOS ================= */
+  //LOAD VIDEOS 
 
   useEffect(() => {
     const loadVideos = async () => {
@@ -53,7 +53,7 @@ function UserCourseVideos() {
     loadVideos();
   }, [courseId]);
 
-  /* ================= DISABLE RIGHT CLICK ================= */
+  // DISABLE RIGHT CLICK 
 
   useEffect(() => {
     const disableRightClick = (e) => e.preventDefault();
@@ -63,7 +63,7 @@ function UserCourseVideos() {
     };
   }, []);
 
-  /* ================= SAVE PROGRESS EVERY 10s ================= */
+  //SAVE PROGRESS EVERY 10s
 
   useEffect(() => {
     if (!player || !activeVideo) return;
@@ -88,7 +88,7 @@ function UserCourseVideos() {
     return () => clearInterval(interval);
   }, [player, activeVideo]);
 
-  /* ================= SAVE PROGRESS ON REFRESH ================= */
+  //SAVE PROGRESS ON REFRESH 
 
   useEffect(() => {
     const saveOnExit = async () => {
@@ -112,7 +112,7 @@ function UserCourseVideos() {
     };
   }, [player, activeVideo]);
 
-  /* ================= LOAD VIDEO ================= */
+  // LOAD VIDEO 
 
   const loadEmbedUrl = async (videoIdParam) => {
     try {
@@ -156,7 +156,7 @@ function UserCourseVideos() {
     }
   };
 
-  /* ================= TOGGLE SUMMARY ================= */
+  //TOGGLE SUMMARY
 
   const toggleSummary = async (video) => {
     const vid = video.video_id;
@@ -193,7 +193,7 @@ function UserCourseVideos() {
     setPlayer(event.target);
   };
 
-  /* ================= UI ================= */
+  // UI 
 
   return (
     <div className="user-videos-page">

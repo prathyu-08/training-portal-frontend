@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/AdminCourseEdit.css";
-const API_BASE = "https://tpgcz18awg.execute-api.eu-north-1.amazonaws.com";
+const API_BASE = "https://zzjx5wi8qd.execute-api.eu-north-1.amazonaws.com";
 function AdminCourseEdit() {
   const { courseId } = useParams();
   const navigate = useNavigate();
